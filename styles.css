@@ -1,0 +1,221 @@
+body { 
+   width: 100%; 
+   background-color: #222222;
+   color: #FFE1EA;
+   padding: 0; 
+   margin: 0; 
+   font-size: 12pt; 
+}
+
+.title { 
+   font-size: 1em; 
+   font-family: 'Roboto Mono', monospace; 
+   font-weight: 400;
+   color: #eee;
+   text-align: center;
+   position: absolute;
+   margin: auto;
+   top: 10px; 
+   width: 100%; 
+}
+
+.logo { 
+   height: 1.3em;
+   margin-bottom: -5px;
+}
+
+img { 
+   max-width:100%;
+}
+h1 {        
+   font-family: "Roboto Mono";
+   font-weight: 700;
+   line-height: 1.2em; 
+   letter-spacing: 8px; 
+   text-align: center;
+   font-size: 3em;   
+   display: inline-block;
+}
+.hero-text { 
+   top: 50%;
+   left: 50%;  
+   display: inline;
+}
+.flex { 
+   display: flex; 
+   flex-direction: column;
+   justify-content: center; 
+   align-content:center;
+}
+.flex-item { 
+   flex: 1 0 0;
+   min-width: 300px; 
+   max-width: 440px; 
+   padding: 30px; 
+}
+.flex-row { 
+   display: flex; 
+   flex-direction: row; 
+   flex-wrap: wrap; 
+}
+.black { 
+   margin-top: 0px; 
+   padding-top: 0px; 
+   width: 100%; 
+   background-color: #222222;
+   color: #FFE1EA; 
+}
+.pink { 
+   background-color: #F4C3D2; 
+   color: #222222;
+}
+.hero { 
+   background-image: url("images/four_lanterns.jpg"); 
+   height: 100vh;  
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+}
+.text-container { 
+   margin: auto;
+   max-width: 900px;
+   padding: 30px; 
+   padding-bottom: 100px;
+   font-family: "Lora";
+   line-height: 1.7em; 
+}
+
+.section-title {
+   margin-top: 40px; 
+}
+
+.caption { 
+   font-family: 'Roboto Mono';
+   font-size: 0.8em; 
+}
+
+.photo-container { 
+   margin: auto;
+   margin-top: 50px; 
+   padding: 10px;
+}
+
+.image { 
+   margin-bottom: 50px;
+}
+
+@media (min-width: 1050px) { 
+   
+   .photo-container { 
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: auto;
+      margin-top: 100px;
+      min-width: 900px;
+      width: 90%;
+      max-width: 1350px;
+   }
+   p {
+      columns: 2; 
+      column-gap: 50px;
+   }
+   h1 { 
+      font-size: 4em; 
+   }
+   .half-width { 
+      width: calc(50% - 10px);
+      max-width: calc(50% - 10px) !important; 
+   }
+   .two-images { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      grid-gap: 50px; 
+      
+   }
+   .image {  
+      position: relative;
+      max-width: 100%;
+      margin-bottom: 50px;
+   }
+   .caption { 
+      font-family: 'Roboto Mono';
+      font-size: 0.8em;
+      columns: 1; 
+      width: 60%; 
+   }
+}
+
+.glitch{
+   position: relative; 
+}
+
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color: #eee;
+  background:#222;
+  overflow:hidden;
+  clip:rect(0,9999px,0,0); 
+  animation:glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(70px, 9999px, 76px, 0);
+  }
+  20% {
+    clip: rect(29px, 9999px, 16px, 0);
+  }
+  40% {
+    clip: rect(76px, 9999px, 3px, 0);
+  }
+  60% {
+    clip: rect(42px, 9999px, 78px, 0);
+  }
+  80% {
+    clip: rect(15px, 9999px, 13px, 0);
+  }
+  100% {
+    clip: rect(53px, 9999px, 5px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(70px, 9999px, 76px, 0);
+  }
+  20% {
+    clip: rect(random(100)+px, 9999px, 16px, 0);
+  }
+  40% {
+    clip: rect(random(100)+px, 9999px, 3px, 0);
+  }
+  60% {
+    clip: rect(random(100)+px, 9999px, 78px, 0);
+  }
+  80% {
+    clip: rect(random(100)+px, 9999px, 13px, 0);
+  }
+  100% {
+    clip: rect(53px, 9999px, 5px, 0);
+  }
+}
+
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue; 
+  top:0;
+  color:#eee;
+  background:#222;
+  overflow:hidden;
+  clip:rect(0,9999px,0,0); 
+  animation:glitch-anim2 3s infinite linear alternate-reverse;
+}
